@@ -50,7 +50,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon}",
+        "format": "{icon}🔊",
         "format-bluetooth": "{icon}",
         "format-bluetooth-muted": " {icon}",
         "format-muted": " ",
