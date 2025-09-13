@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, SpaceGroteskSemiBold;
+    font-family: SpaceGroteskMedium, JetBrainsMonoNerdFont;
     font-size: 15px;
 }
 
@@ -99,6 +99,6 @@ label:focus {
     background-color: #000000;
 }
 
-#custom-notification {
-  font-family: "NotoSansMono Nerd Font";
+#tray {
+    margin-left: -10;
 }

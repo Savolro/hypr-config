@@ -1,6 +1,9 @@
 * {
 	background-image: none;
 	font-family: "Space Grotesk";
+        font-weight: bold;
+        text-shadow: none;
+        color: #FFFFFF;
 }
 
 window {
@@ -17,7 +20,7 @@ button {
 }
 
 button:focus, button:active, button:hover {
-	background-color: #3F444F;
+	background-color: #6F747F;
 	border-color: #EEEEEE;
 	outline-style: none;
 }

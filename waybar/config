@@ -19,8 +19,8 @@
         "tooltip-format": "{app}: {title}"
     },
     "tray": {
-        // "icon-size": 21,
         "spacing": 10
+        // "icon-size": 21,
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -33,7 +33,7 @@
             "critical": 15
         },
         "format": "{icon}",
-        "format-charging": "{icon} ",
+        "format-charging": "{icon} 󱐋",
         "format-plugged": "{icon} ",
         "tooltip-format": "{capacity}% ({time} remaining)",
         // "format-good": "", // An empty format will hide the module
@@ -50,17 +50,17 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon}🔊",
+        "format": "{icon}",
         "format-bluetooth": "{icon}",
         "format-bluetooth-muted": " {icon}",
-        "format-muted": " ",
+        "format-muted": "",
         "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-source-muted": " ",
 	"tooltip-format": "{desc} ({volume}%)",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
-            "headset": "",
+            "headset": "󰋎",
             "phone": "",
             "portable": "",
             "car": "",
@@ -84,10 +84,10 @@
         "tooltip": false,
         "format": "{icon}",
         "format-icons": {
-            "notification": "<span foreground='red'></span>",
-            "none": "",
-            "dnd-notification": "<span foreground='red'></span>",
-            "dnd-none": ""
+            "notification": "󱅫 ",
+            "none": "󰂜 ",
+            "dnd-notification": "󰂛 ",
+            "dnd-none": "󰪑 "
         },
         "return-type": "json",
         "exec-if": "which swaync-client",
