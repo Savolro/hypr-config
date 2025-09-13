@@ -6,10 +6,8 @@
 @define-color noti-border-color rgba(255, 255, 255, 0.15);
 @define-color noti-bg rgb(43, 48, 59);
 @define-color noti-bg-hover rgb(63, 68, 79);
-@define-color noti-bg-focus rgba(68, 68, 68, 0.6);
 @define-color noti-close-bg rgba(255, 255, 255, 0.5);
 @define-color noti-close-bg-hover rgba(255, 0, 0, 1);
-
 @define-color bg-selected rgb(200, 200, 200);
 
 * {
@@ -22,7 +20,7 @@
 
 .notification-row:focus,
 .notification-row:hover {
-  background: @noti-bg-focus;
+  background: transparent;
 }
 
 .notification {

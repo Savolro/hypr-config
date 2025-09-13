@@ -1,3 +1,9 @@
+@define-color cc-bg rgba(43, 48, 59, 0.7);
+@define-color cc-bg-solid rgba(43, 48, 59, 1);
+@define-color bg-hover rgb(63, 68, 79);
+@define-color disabled #AAAAAA;
+
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: SpaceGroteskMedium, JetBrainsMonoNerdFont;
@@ -5,7 +11,7 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.7);
+    background-color: @cc-bg;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -101,4 +107,29 @@ label:focus {
 
 #tray {
     margin-left: -10;
+}
+
+#tray menu {
+    background-color: @cc-bg-solid;
+    border: none;
+    color: #FFFFFF;
+    font-size: 22px;
+    padding: 4px;
+}
+
+#tray menu menuitem {
+    padding-top: 3px; padding-bottom: 3px;
+    font-size: 22px;
+}
+
+#tray menu menuitem:hover {
+    background-color: @bg-hover;
+}
+#tray menu menuitem:disabled {
+     color: @disabled;
+}
+
+tooltip {
+    background-color: @cc-bg-solid;
+    border: none;
 }

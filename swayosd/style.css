@@ -1,9 +1,13 @@
-@import "colors.css";
+@define-color cc-bg rgba(43, 48, 59, 0.7);
+
+* {
+  font-family: "Space Grotesk";
+}
 
 window#osd {
   border-radius: 15px;
   border: 1px @primary_container;
-  background: alpha(#000000, 0.2);
+  background: @cc-bg;
 }
 
 window#osd #container {
