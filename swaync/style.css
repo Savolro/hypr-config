@@ -14,6 +14,10 @@
   font-family: "Space Grotesk";
 }
 
+body {
+  font: 1.2em sans-serif;
+}
+
 .notification-row {
   outline: none;
 }
