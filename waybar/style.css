@@ -1,135 +1,130 @@
-@define-color cc-bg rgba(43, 48, 59, 0.7);
-@define-color cc-bg-solid rgba(43, 48, 59, 1);
-@define-color bg-hover rgb(63, 68, 79);
-@define-color disabled #AAAAAA;
-
+@import url("common.css");
 
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: SpaceGroteskMedium, JetBrainsMonoNerdFont;
-    font-size: 15px;
+	font-family: "Space Grotesk", "Symbols Nerd Font Mono";
+	font-weight: 600;
+	font-size: 14px;
+	min-height: 0;
 }
 
 window#waybar {
-    background-color: @cc-bg;
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+	background-color: @color-background-70;
+	color: @color-foreground;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+#workspaces {
+	background: transparent;
+	margin: 4px;
+	padding: 0;
 }
 
 #workspaces button {
-    padding: 0 8px;
-    background-color: transparent;
-    color: #ffffff;
+	padding: 0 8px;
+	background-color: @color-background-95;
+	color: @color-fg-dark;
+	border-radius: 6px;
+	margin: 0 3px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	transition: all 0.2s ease;
 }
 
 #workspaces button:hover {
-    background-color: rgba(0, 0, 0, 0);
+	background-color: @color-accent-35;
+	color: @color-foreground;
 }
 
 #workspaces button.active {
-    background-color: rgba(0, 0, 0, 0);
-    box-shadow: inset 0 -3px #ffffff;
+	background-color: @color-accent;
+	color: @color-background;
+	font-weight: 800;
+	padding: 0 12px;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
-}
-
-#mode {
-    background-color: #FF727D;
-    border-bottom: 3px solid #ffffff;
+	background-color: @color-red;
+	color: @color-background;
 }
 
 #clock,
 #battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
 #network,
 #pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#mpd {
-    padding: 0 10px;
-    color: #ffffff;
+#custom-notification,
+#window {
+	padding: 0 10px;
+	color: @color-foreground;
+	margin: 4px 2px;
+	border-radius: 8px;
+	transition: all 0.2s ease;
 }
 
-#window,
-#workspaces {
-    margin: 0 4px;
+#clock:hover,
+#battery:hover,
+#network:hover,
+#pulseaudio:hover,
+#custom-notification:hover {
+	background-color: @color-background-95;
+	color: @color-accent;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-label:focus {
-    background-color: #000000;
-}
-
+/* ─── TRAY (The Correct Implementation) ─── */
 #tray {
-    margin-left: -10;
+	background-color: transparent;
+	margin-left: 8px;
 }
 
-#tray menu {
-    background-color: @cc-bg-solid;
-    border: none;
-    color: #FFFFFF;
-    font-size: 22px;
-    padding: 4px;
+#tray>.passive,
+#tray>.active {
+	background-color: transparent;
+	border-radius: 8px;
+	padding: 0 10px;
+	margin: 4px 2px;
+	min-height: 24px;
+	background-clip: padding-box;
+	transition: all 0.2s ease;
 }
 
-#tray menu menuitem {
-    padding-top: 3px; padding-bottom: 3px;
-    font-size: 22px;
+#tray>.passive:hover,
+#tray>.active:hover {
+	background-color: @color-background-95;
+	color: @color-accent;
+	-gtk-icon-effect: none;
 }
 
-#tray menu menuitem:hover {
-    background-color: @bg-hover;
+#tray>.passive {
+	-gtk-icon-effect: dim;
 }
-#tray menu menuitem:disabled {
-     color: @disabled;
+
+#tray>.needs-attention {
+	background-color: @color-red;
+	-gtk-icon-effect: highlight;
 }
 
 tooltip {
-    background-color: @cc-bg-solid;
-    border: none;
+	background: @color-background-95;
+	border-radius: 12px;
+	border: 2px solid @color-bg-selected;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+}
+
+tooltip label {
+	padding: 8px;
+	color: @color-foreground;
+}
+
+menu {
+	background: @color-background-95;
+	border: 2px solid @color-bg-selected;
+	border-radius: 12px;
+	padding: 8px;
+}
+
+menuitem {
+	padding: 4px 8px;
+	border-radius: 6px;
+}
+
+menuitem:hover {
+	background-color: @color-accent-35;
 }

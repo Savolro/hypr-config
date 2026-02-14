@@ -20,7 +20,6 @@
     },
     "tray": {
         "spacing": 10
-        // "icon-size": 21,
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -41,7 +40,6 @@
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "",
         "format-ethernet": "",
         "tooltip-format": "{ifname} via {gwaddr} ({essid})",
