@@ -1,23 +1,68 @@
 @import url("common.css");
 
 * {
-	all: unset;
 	font-family: "Space Grotesk";
 	font-weight: 600;
-	color: @color-foreground;
-}
-
-.floating-notifications {
-	background: transparent;
+	font-size: 14px;
 }
 
 .notification-row {
 	outline: none;
+	background: transparent;
 }
 
 .notification-row:focus,
-.notification-row:hover {
+.notification-row:hover,
+.notification-row:selected,
+.notification-row:focus:hover {
 	background: transparent;
+	outline: none;
+	box-shadow: none;
+}
+
+.notification-default-action:focus,
+.notification-default-action:selected {
+	background: transparent;
+	outline: none;
+	box-shadow: none;
+}
+
+.notification-row,
+.notification-row:focus,
+.notification-row:hover,
+.notification-row:selected,
+.notification-row:active,
+.notification,
+.notification:focus,
+.notification:selected,
+.notification:active,
+.notification-default-action,
+.notification-default-action:focus,
+.notification-default-action:selected,
+.notification-default-action:active,
+.notification-content,
+.notification-content:focus,
+.notification-content:selected,
+row,
+row:focus,
+row:selected,
+row:active,
+row:hover {
+	outline: none;
+	box-shadow: none;
+	background-color: transparent;
+	background-image: none;
+}
+
+.notification {
+	background: @color-background-70  !important;
+	background-image: radial-gradient(ellipse at top center,
+			rgba(111, 116, 127, 0.08) 0%,
+			transparent 60%) !important;
+}
+
+.notification:hover {
+	border-color: @color-disabled;
 }
 
 .notification {
@@ -33,9 +78,7 @@
 			rgba(111, 116, 127, 0.08) 0%,
 			transparent 60%);
 	padding: 0;
-	transition:
-		border-color 0.2s ease,
-		box-shadow 0.2s ease;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .notification:hover {
@@ -44,8 +87,16 @@
 
 .notification-content {
 	background: transparent;
-	padding: 12px 14px;
+	padding: 8px 12px;
 	border-radius: 14px;
+}
+
+.image {
+	max-width: 64px;
+	max-height: 64px;
+	margin-right: 16px;
+	margin-top: 6px;
+	margin-bottom: 6px;
 }
 
 .close-button {
@@ -54,15 +105,13 @@
 	text-shadow: none;
 	padding: 0;
 	border-radius: 8px;
-	margin-top: 12px;
-	margin-right: 14px;
+	margin-top: 16px;
+	margin-right: 22px;
 	box-shadow: none;
 	border: 2px solid @color-bg-selected;
 	min-width: 24px;
 	min-height: 24px;
-	transition:
-		background-color 0.2s ease,
-		border-color 0.2s ease;
+	transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .close-button:hover {
@@ -73,16 +122,13 @@
 
 .notification-default-action,
 .notification-action {
-	padding: 10px 14px;
+	padding: 8px 12px;
 	margin: 0;
 	box-shadow: none;
 	background: transparent;
 	border: 2px solid transparent;
 	color: @color-foreground;
-	transition:
-		background-color 0.2s ease,
-		border-color 0.2s ease,
-		padding-left 0.2s ease;
+	transition: background-color 0.2s ease, border-color 0.2s ease, padding-left 0.2s ease;
 }
 
 .notification-default-action:hover,
@@ -90,7 +136,7 @@
 	-gtk-icon-effect: none;
 	background: @color-accent-35;
 	border-color: @color-bg-selected;
-	padding-left: 18px;
+	padding-left: 16px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
@@ -118,35 +164,34 @@
 }
 
 .summary {
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 700;
-	letter-spacing: 0.2px;
 	background: transparent;
 	color: @color-foreground;
 	text-shadow: none;
+	margin-bottom: 4px;
 }
 
 .time {
-	font-size: 11px;
-	font-weight: 500;
-	background: transparent;
-	color: @color-fg-dark;
-	text-shadow: none;
-	margin-right: 14px;
-}
-
-.body {
 	font-size: 12px;
 	font-weight: 500;
 	background: transparent;
 	color: @color-fg-dark;
 	text-shadow: none;
-	margin-top: 4px;
-	transition: color 0.2s ease;
+	margin-right: 32px;
+	margin-bottom: 2px;
+}
+
+.body {
+	font-size: 14px;
+	font-weight: 500;
+	background: transparent;
+	color: @color-fg-dark;
+	text-shadow: none;
 }
 
 .body-image {
-	margin-top: 8px;
+	margin-top: 6px;
 	background-color: @color-background-95;
 	border-radius: 10px;
 	border: 2px solid @color-bg-selected;
@@ -182,7 +227,6 @@
 	margin: 8px;
 	font-size: 1.3rem;
 	font-weight: 700;
-	letter-spacing: 0.3px;
 	color: @color-foreground;
 }
 
@@ -190,17 +234,11 @@
 	font-size: 12px;
 	font-weight: 700;
 	color: @color-foreground;
-	text-shadow: none;
 	background: @color-background-95;
 	border: 2px solid @color-disabled;
-	box-shadow:
-		inset 0 2px 4px rgba(0, 0, 0, 0.15),
-		0 2px 8px rgba(0, 0, 0, 0.10);
 	border-radius: 10px;
 	padding: 8px 14px;
-	transition:
-		border-color 0.25s ease,
-		background-color 0.25s ease;
+	transition: border-color 0.25s ease, background-color 0.25s ease;
 }
 
 .widget-title>button:hover {
@@ -219,11 +257,8 @@
 	border-radius: 12px;
 	background: @color-background-95;
 	border: 2px solid @color-disabled;
-	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
 	padding: 4px;
-	transition:
-		border-color 0.25s ease,
-		background-color 0.25s ease;
+	transition: border-color 0.25s ease, background-color 0.25s ease;
 }
 
 .widget-dnd>switch:checked {
@@ -236,66 +271,61 @@
 	border-radius: 10px;
 	min-width: 20px;
 	min-height: 20px;
+}
 
-	.widget-label {
-		margin: 8px;
-	}
+.widget-label {
+	margin: 8px;
+}
 
-	.widget-label>label {
-		font-size: 1rem;
-		font-weight: 600;
-		color: @color-fg-dark;
-	}
+.widget-label>label {
+	font-size: 1rem;
+	font-weight: 600;
+	color: @color-fg-dark;
+}
 
-	.widget-mpris {
-		margin: 8px;
-	}
+.widget-mpris {
+	margin: 8px;
+}
 
-	.widget-mpris-player {
-		padding: 12px 14px;
-		margin: 4px 0;
-		background: @color-background-95;
-		border-radius: 12px;
-		border: 2px solid @color-bg-selected;
-		box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.12);
-		transition: border-color 0.2s ease;
-	}
+.widget-mpris-player {
+	padding: 12px 14px;
+	margin: 4px 0;
+	background: @color-background-95;
+	border-radius: 12px;
+	border: 2px solid @color-bg-selected;
+	transition: border-color 0.2s ease;
+}
 
-	.widget-mpris-player:hover {
-		border-color: @color-disabled;
-	}
+.widget-mpris-player:hover {
+	border-color: @color-disabled;
+}
 
-	.widget-mpris-title {
-		font-weight: 700;
-		font-size: 14px;
-		letter-spacing: 0.2px;
-		color: @color-foreground;
-	}
+.widget-mpris-title {
+	font-weight: 700;
+	font-size: 14px;
+	color: @color-foreground;
+}
 
-	.widget-mpris-subtitle {
-		font-size: 12px;
-		font-weight: 500;
-		color: @color-fg-dark;
-		margin-top: 4px;
-	}
+.widget-mpris-subtitle {
+	font-size: 12px;
+	font-weight: 500;
+	color: @color-fg-dark;
+	margin-top: 4px;
+}
 
-	scrollbar {
-		opacity: 0;
-	}
+.low {
+	border-left: 3px solid @color-fg-dark;
+}
 
-	.low {
-		border-left: 3px solid @color-fg-dark;
-	}
+.normal {
+	border-left: 3px solid @color-selected;
+}
 
-	.normal {
-		border-left: 3px solid @color-selected;
-	}
+.critical {
+	border-left: 3px solid @color-red;
+	background: @color-accent-35;
+}
 
-	.critical {
-		border-left: 3px solid @color-red;
-		background: @color-accent-35;
-	}
-
-	.critical .summary {
-		color: @color-red;
-	}
+.critical .summary {
+	color: @color-red;
+}
