@@ -1,13 +1,36 @@
 {
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
-    "spacing": 0, // Gaps between modules (4px)
-    "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/scratchpad"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio", "network", "battery", "clock", "tray", "custom/notification"],
-    "hide-on-modifier": true,
-    "ipc": true,
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 0, // CRITICAL: CSS handles spacing
 
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces",
+        "hyprland/mode",
+        "hyprland/scratchpad"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "tray",
+        "pulseaudio",
+        "network",
+        "battery",
+        "clock",
+        "custom/notification"
+    ],
+    "custom/launcher": {
+        "format": "",
+        "on-click": "walker", // Or 'rofi -show drun'
+        "tooltip": false
+    },
+    "hyprland/workspaces": {
+        "format": "{id}",
+        "on-click": "activate",
+        "sort-by-number": true
+    },
     "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -18,43 +41,15 @@
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
-    "tray": {
-        "spacing": 10
-    },
     "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}",
-        "format-charging": "{icon} 󱐋",
-        "format-plugged": "{icon} ",
-        "tooltip-format": "{capacity}% ({time} remaining)",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "network": {
-        "format-wifi": "",
-        "format-ethernet": "",
-        "tooltip-format": "{ifname} via {gwaddr} ({essid})",
-        "format-linked": "",
-        "format-disconnected": "⚠",
+        "format": "{:%H:%M}",
+        "format-alt": "{:%Y-%m-%d}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{icon}",
-        "format-bluetooth": "{icon}",
-        "format-bluetooth-muted": " {icon}",
-        "format-muted": "",
-        "format-source": "{volume}% ",
-        "format-source-muted": " ",
-	"tooltip-format": "{desc} ({volume}%)",
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-muted": "󰝟",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -66,26 +61,34 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "tooltip-format": "{essid} ({signalStrength}%)\n{ifname} via {gwaddr}",
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
         },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄 {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{capacity}% ({time} remaining)"
+    },
+    "tray": {
+        "spacing": 10
     },
     "custom/notification": {
         "tooltip": false,
         "format": "{icon}",
         "format-icons": {
-            "notification": "󱅫 ",
-            "none": "󰂜 ",
-            "dnd-notification": "󰂛 ",
-            "dnd-none": "󰪑 "
+            "notification": "󰂚<span foreground='#FF113D'><sup></sup></span>",
+            "none": "󰂚",
+            "dnd-notification": "󰂛<span foreground='#FF113D'><sup></sup></span>",
+            "dnd-none": "󰂛"
         },
         "return-type": "json",
         "exec-if": "which swaync-client",
@@ -93,6 +96,5 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
-    }
+    },
 }
-

@@ -11,6 +11,27 @@ window#waybar {
 	background-color: @color-background-70;
 	color: @color-foreground;
 	border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+	transition: background-color 0.5s;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+#custom-launcher {
+	background-color: transparent;
+	color: @color-accent;
+	padding: 0 12px;
+	margin: 4px 0 4px 6px;
+	border-radius: 8px;
+	font-size: 16px;
+	transition: all 0.2s ease;
+}
+
+#custom-launcher:hover {
+	background-color: @color-background-95;
+	color: @color-foreground;
+	box-shadow: 0 0 10px @color-accent-35;
 }
 
 #workspaces {
@@ -32,11 +53,13 @@ window#waybar {
 #workspaces button:hover {
 	background-color: @color-accent-35;
 	color: @color-foreground;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #workspaces button.active {
 	background-color: @color-accent;
 	color: @color-background;
+	box-shadow: 0 2px 4px @color-accent-35;
 	font-weight: 800;
 	padding: 0 12px;
 }
@@ -50,13 +73,16 @@ window#waybar {
 #battery,
 #network,
 #pulseaudio,
-#custom-notification,
-#window {
+#custom-notification {
 	padding: 0 10px;
 	color: @color-foreground;
+	background-color: transparent;
 	margin: 4px 2px;
 	border-radius: 8px;
 	transition: all 0.2s ease;
+}
+#custom-notification {
+        min-width: 24px;
 }
 
 #clock:hover,
@@ -66,29 +92,49 @@ window#waybar {
 #custom-notification:hover {
 	background-color: @color-background-95;
 	color: @color-accent;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* ─── TRAY (The Correct Implementation) ─── */
+#battery.charging,
+#battery.plugged {
+	color: @color-green;
+}
+
+#battery.critical:not(.charging) {
+	background-color: @color-red;
+	color: @color-foreground;
+	animation: blink 0.5s linear infinite alternate;
+}
+
+@keyframes blink {
+	to {
+		background-color: @color-foreground;
+		color: @color-red;
+	}
+}
+
 #tray {
 	background-color: transparent;
 	margin-left: 8px;
 }
 
 #tray>.passive,
-#tray>.active {
+#tray>.active,
+#tray>.needs-attention {
 	background-color: transparent;
 	border-radius: 8px;
-	padding: 0 10px;
+	min-width: 24px;
+	padding: 0 8px;
 	margin: 4px 2px;
-	min-height: 24px;
-	background-clip: padding-box;
 	transition: all 0.2s ease;
 }
 
 #tray>.passive:hover,
-#tray>.active:hover {
+#tray>.active:hover,
+#tray>.needs-attention:hover {
 	background-color: @color-background-95;
 	color: @color-accent;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 	-gtk-icon-effect: none;
 }
 
@@ -99,18 +145,6 @@ window#waybar {
 #tray>.needs-attention {
 	background-color: @color-red;
 	-gtk-icon-effect: highlight;
-}
-
-tooltip {
-	background: @color-background-95;
-	border-radius: 12px;
-	border: 2px solid @color-bg-selected;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
-}
-
-tooltip label {
-	padding: 8px;
-	color: @color-foreground;
 }
 
 menu {
@@ -127,4 +161,16 @@ menuitem {
 
 menuitem:hover {
 	background-color: @color-accent-35;
+}
+
+tooltip {
+	background: @color-background-95;
+	border-radius: 12px;
+	border: 2px solid @color-bg-selected;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+}
+
+tooltip label {
+	padding: 8px;
+	color: @color-foreground;
 }
