@@ -3,7 +3,7 @@
 * {
 	background-image: none;
 	font-family: "Space Grotesk", sans-serif;
-	font-weight: bold;
+	font-weight: 600;
 	text-shadow: none;
 	color: @color-foreground;
 }

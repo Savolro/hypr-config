@@ -2,7 +2,7 @@
 
 * {
 	all: unset;
-	font-family: "Space Grotesk";
+	font-family: "Space Grotesk", sans-serif;
 	font-weight: 600;
 	color: @color-foreground;
 }
@@ -62,7 +62,7 @@ scrollbar {
 .input:focus,
 .input:active {
 	border-color: @color-selected;
-	background: rgba(43, 48, 59, 0.95);
+	background: @color-background-95;
 }
 
 .input placeholder {
