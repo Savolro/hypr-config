@@ -29,9 +29,7 @@ window#waybar.hidden {
 }
 
 #custom-launcher:hover {
-	background-color: @color-background-95;
 	color: @color-foreground;
-	box-shadow: 0 0 10px @color-accent-35;
 }
 
 #workspaces {
@@ -89,9 +87,7 @@ window#waybar.hidden {
 #network:hover,
 #pulseaudio:hover,
 #custom-notification:hover {
-	background-color: @color-background-95;
 	color: @color-accent;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 #battery.charging,

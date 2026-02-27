@@ -51,5 +51,4 @@ window#osd progress {
 	border-radius: 999px;
 	border: none;
 	background: @color-accent;
-	box-shadow: 0 0 10px @color-accent-35;
 }
