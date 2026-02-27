@@ -7,8 +7,7 @@
     "modules-left": [
         "custom/launcher",
         "hyprland/workspaces",
-        "hyprland/mode",
-        "hyprland/scratchpad"
+        "hyprland/mode"
     ],
     "modules-center": [
         "hyprland/window"
@@ -33,13 +32,6 @@
     },
     "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
-    },
-    "hyprland/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
     },
     "clock": {
         "format": "{:%H:%M}",
@@ -85,9 +77,9 @@
         "tooltip": false,
         "format": "{icon}",
         "format-icons": {
-            "notification": "󰂚<span foreground='#FF113D'><sup></sup></span>",
+            "notification": "󰂚<span foreground='#CC0F31'><sup></sup></span>",
             "none": "󰂚",
-            "dnd-notification": "󰂛<span foreground='#FF113D'><sup></sup></span>",
+            "dnd-notification": "󰂛<span foreground='#CC0F31'><sup></sup></span>",
             "dnd-none": "󰂛"
         },
         "return-type": "json",
