@@ -1,0 +1,21 @@
+/* Light theme */
+
+/* Base */
+@define-color color-background        rgba(235, 235, 235, 1.0);
+@define-color color-background-70     rgba(235, 235, 235, 0.7);
+@define-color color-background-95     rgba(235, 235, 235, 0.95);
+@define-color color-bg-selected       rgba(190, 195, 205, 1.0);
+@define-color color-bg-selected-70    rgba(190, 195, 205, 0.7);
+@define-color color-selected          rgba(30, 30, 30, 1.0);
+@define-color color-foreground        rgba(30, 30, 30, 1.0);
+@define-color color-fg-dark           rgba(90, 90, 90, 1.0);
+@define-color color-disabled          rgba(140, 140, 140, 1.0);
+
+/* Accent — change these to swap accent color */
+@define-color color-accent            rgba(0, 130, 220, 1.0);
+@define-color color-accent-70         rgba(0, 130, 220, 0.7);
+@define-color color-accent-35         rgba(0, 130, 220, 0.35);
+
+/* Status */
+@define-color color-red               rgba(204, 15, 49, 1.0);
+@define-color color-green             rgba(38, 212, 139, 1.0);
