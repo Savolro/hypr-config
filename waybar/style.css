@@ -56,14 +56,14 @@ window#waybar.hidden {
 
 #workspaces button.active {
 	background-color: @color-accent;
-	color: @color-background;
+	color: @color-on-accent;
 	font-weight: 800;
 	padding: 0 12px;
 }
 
 #workspaces button.urgent {
 	background-color: @color-red;
-	color: @color-background;
+	color: @color-on-accent;
 }
 
 #clock,

@@ -12,9 +12,12 @@
 @define-color color-disabled          rgba(140, 140, 140, 1.0);
 
 /* Accent — change these to swap accent color */
-@define-color color-accent            rgba(0, 130, 220, 1.0);
-@define-color color-accent-70         rgba(0, 130, 220, 0.7);
-@define-color color-accent-35         rgba(0, 130, 220, 0.35);
+@define-color color-accent            rgba(0, 90, 170, 1.0);
+@define-color color-accent-70         rgba(0, 90, 170, 0.7);
+@define-color color-accent-35         rgba(0, 90, 170, 0.35);
+
+/* Text on accent/status backgrounds */
+@define-color color-on-accent         rgba(255, 255, 255, 1.0);
 
 /* Status */
 @define-color color-red               rgba(204, 15, 49, 1.0);

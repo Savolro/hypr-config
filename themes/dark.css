@@ -16,6 +16,9 @@
 @define-color color-accent-70         rgba(53, 167, 255, 0.7);
 @define-color color-accent-35         rgba(53, 167, 255, 0.35);
 
+/* Text on accent/status backgrounds */
+@define-color color-on-accent         rgba(255, 255, 255, 1.0);
+
 /* Status */
 @define-color color-red               rgba(204, 15, 49, 1.0);
 @define-color color-green             rgba(38, 212, 139, 1.0);
