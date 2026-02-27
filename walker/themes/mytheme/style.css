@@ -263,7 +263,7 @@ child:selected .item-subtext {
 
 .preview-content.archlinuxpkgs,
 .preview-content.dnfpackages {
-	font-family: "JetBrains Mono";
+	font-family: "JetBrains Mono", monospace;
 	font-weight: 500;
 	font-size: 12px;
 	line-height: 1.5;
