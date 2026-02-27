@@ -30,6 +30,10 @@ Disclaimer: This is largely vibe-coded
 ### Themes
 For both QT and GTK I am using Yaru-Blue-Dark theme
 
+#### Switching between dark and light mode
+- CSS apps (waybar, swaync, swayosd, wlogout, walker): change the import in `common.css` to `themes/dark.css` or `themes/light.css`
+- kitty: change the include in `kitty/kitty.conf` to `themes/dark.conf` or `themes/light.conf`
+
 ## Installation
 After all of the prerequisites are installed, execute the following:
 
