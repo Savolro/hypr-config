@@ -1,2 +1,2 @@
-/* Switch theme by changing the import path: dark.css / light.css */
-@import url("themes/dark.css");
+/* Theme is set in theme.css (gitignored) — use switch-theme.sh to change */
+@import url("theme.css");
