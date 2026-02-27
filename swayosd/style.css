@@ -7,14 +7,14 @@
 
 window#osd {
 	background: transparent;
-	border-radius: 15px;
+	border-radius: 12px;
 	border: none;
 	box-shadow: none;
 }
 
 window#osd #container {
 	padding: 12px;
-	border-radius: 15px;
+	border-radius: 12px;
 	background: @color-background-70;
 	border: 2px solid @color-bg-selected;
 	background-image: radial-gradient(ellipse at top center,

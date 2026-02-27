@@ -8,10 +8,10 @@ Disclaimer: This is largely vibe-coded
 ### Hyprland specifics
 - hyprland
 - hyprlock
-- hyprpaper
 
 ### Additional tools
 - kitty
+- awww
 - swaync
 - swayosd
 - waybar
@@ -19,6 +19,8 @@ Disclaimer: This is largely vibe-coded
 - walker
 - dolphin
 - hyprshot
+- playerctl
+- pavucontrol
 
 ### Fonts
 - JetBrains Mono Nerd Font
@@ -32,7 +34,6 @@ For both QT and GTK I am using Yaru-Blue-Dark theme
 After all of the prerequisites are installed, execute the following:
 
 ```sh
-echo hello
 git clone https://github.com/Savolro/hypr-config.git ~/.config/hypr
 ln -s ~/.config/hypr/kitty ~/.config/kitty
 ln -s ~/.config/hypr/swaync ~/.config/swaync
@@ -42,4 +43,4 @@ ln -s ~/.config/hypr/wlogout ~/.config/wlogout
 ln -s ~/.config/hypr/walker ~/.config/walker
 ```
 
-Then ,apply themes manually.
+Then, apply themes manually.

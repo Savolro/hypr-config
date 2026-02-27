@@ -23,7 +23,7 @@ window#waybar.hidden {
 	color: @color-accent;
 	padding: 0 12px;
 	margin: 4px 0 4px 6px;
-	border-radius: 8px;
+	border-radius: 12px;
 	font-size: 16px;
 	transition: all 0.2s ease;
 }
@@ -75,7 +75,7 @@ window#waybar.hidden {
 	color: @color-foreground;
 	background-color: transparent;
 	margin: 4px 2px;
-	border-radius: 8px;
+	border-radius: 12px;
 	transition: all 0.2s ease;
 }
 #custom-notification {
@@ -117,7 +117,7 @@ window#waybar.hidden {
 #tray>.active,
 #tray>.needs-attention {
 	background-color: transparent;
-	border-radius: 8px;
+	border-radius: 12px;
 	min-width: 24px;
 	padding: 0 8px;
 	margin: 4px 2px;

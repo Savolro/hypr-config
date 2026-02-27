@@ -42,7 +42,7 @@ scrollbar {
 }
 
 .search-container {
-	border-radius: 15px;
+	border-radius: 18px;
 	margin-bottom: 8px;
 }
 
@@ -50,7 +50,7 @@ scrollbar {
 	caret-color: @color-selected;
 	background: @color-background-95;
 	padding: 14px 18px;
-	border-radius: 14px;
+	border-radius: 12px;
 	border: 3px solid @color-disabled;
 	font-size: 16px;
 	font-weight: 700;
@@ -107,7 +107,7 @@ child:selected .item-box {
 
 .item-quick-activation {
 	background: @color-accent-35;
-	border-radius: 8px;
+	border-radius: 12px;
 	padding: 6px 10px;
 	border: 1px solid @color-bg-selected;
 	font-size: 11px;
@@ -153,7 +153,7 @@ child:selected .item-subtext {
 
 .preview {
 	border: 2px solid @color-bg-selected;
-	border-radius: 14px;
+	border-radius: 12px;
 	color: @color-foreground;
 	background: @color-background-95;
 	padding: 16px;
