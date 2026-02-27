@@ -42,6 +42,7 @@ sed -i "s|^source = themes/hyprlock/.*\.conf|source = themes/hyprlock/${THEME}.c
 # Reload configs
 hyprctl reload
 killall -SIGUSR2 waybar
-killall swaync && swaync &
+killall swaync; swaync &
+killall walker; walker --gapplication-service &
 
 echo "Switched to $THEME theme"
