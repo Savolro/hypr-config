@@ -1,1 +1,4 @@
 theme = "mytheme"
+
+[modules.applications]
+enabled = true
