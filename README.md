@@ -33,6 +33,8 @@ For both QT and GTK I am using Yaru-Blue-Dark theme
 #### Switching between dark and light mode
 - CSS apps (waybar, swaync, swayosd, wlogout, walker): change the import in `common.css` to `themes/dark.css` or `themes/light.css`
 - kitty: change the include in `kitty/kitty.conf` to `themes/dark.conf` or `themes/light.conf`
+- hyprland: change the source in `hyprland.conf` to `themes/hyprland/dark.conf` or `themes/hyprland/light.conf`
+- hyprlock: change the source in `hyprlock.conf` to `themes/hyprlock/dark.conf` or `themes/hyprlock/light.conf`
 
 ## Installation
 After all of the prerequisites are installed, execute the following:
