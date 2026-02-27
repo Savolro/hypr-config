@@ -1,10 +1,29 @@
 #!/bin/bash
 
 HYPR_DIR="$HOME/.config/hypr"
-THEME="${1:-}"
+THEMES_DIR="$HYPR_DIR/themes"
+THEME="${1:-pick}"
 
-if [[ "$THEME" != "dark" && "$THEME" != "light" ]]; then
-        echo "Usage: $0 <dark|light>"
+# Get available themes from CSS files
+available_themes() {
+        find "$THEMES_DIR" -maxdepth 1 -name "*.css" -printf "%f\n" | sed 's/\.css$//' | sort
+}
+
+# Get current theme
+current_theme() {
+        grep -oP 'themes/\K[^.]+' "$HYPR_DIR/common.css"
+}
+
+if [[ "$THEME" == "pick" ]]; then
+        CURRENT=$(current_theme)
+        THEME=$(available_themes | walker -d -p "Theme")
+        [[ -z "$THEME" ]] && exit 0
+fi
+
+# Validate theme exists
+if [[ ! -f "$THEMES_DIR/${THEME}.css" ]]; then
+        echo "Unknown theme: $THEME"
+        echo "Available: $(available_themes | tr '\n' ' ')"
         exit 1
 fi
 
