@@ -25,7 +25,12 @@ fi
 echo "@import url(\"themes/${THEME}.css\");" > "$HYPR_DIR/theme.css"
 echo "source = themes/hyprland/${THEME}.conf" > "$HYPR_DIR/theme.conf"
 echo "source = themes/hyprlock/${THEME}.conf" > "$HYPR_DIR/hyprlock-theme.conf"
-echo "include themes/${THEME}.conf" > "$HYPR_DIR/kitty/theme.conf"
+# Kitty: fall back to base theme (e.g. dark-red -> dark) if no exact match
+KITTY_THEME="$THEME"
+if [[ ! -f "$HYPR_DIR/kitty/themes/${KITTY_THEME}.conf" ]]; then
+	KITTY_THEME="${THEME%%-*}"
+fi
+echo "include themes/${KITTY_THEME}.conf" > "$HYPR_DIR/kitty/theme.conf"
 
 # Reload configs
 hyprctl reload

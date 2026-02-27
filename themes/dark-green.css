@@ -1,0 +1,24 @@
+/* Dark theme — green accent */
+
+/* Base */
+@define-color color-background        rgba(43, 48, 59, 1.0);
+@define-color color-background-70     rgba(43, 48, 59, 0.7);
+@define-color color-background-95     rgba(43, 48, 59, 0.95);
+@define-color color-bg-selected       rgba(94, 103, 128, 1.0);
+@define-color color-bg-selected-70    rgba(94, 103, 128, 0.7);
+@define-color color-selected          rgba(255, 255, 255, 1.0);
+@define-color color-foreground        rgba(255, 255, 255, 1.0);
+@define-color color-fg-dark           rgba(170, 170, 170, 1.0);
+@define-color color-disabled          rgba(170, 170, 170, 1.0);
+
+/* Accent */
+@define-color color-accent            rgba(38, 212, 139, 1.0);
+@define-color color-accent-70         rgba(38, 212, 139, 0.7);
+@define-color color-accent-35         rgba(38, 212, 139, 0.35);
+
+/* Text on accent/status backgrounds */
+@define-color color-on-accent         rgba(255, 255, 255, 1.0);
+
+/* Status */
+@define-color color-red               rgba(204, 15, 49, 1.0);
+@define-color color-green             rgba(38, 212, 139, 1.0);
