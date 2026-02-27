@@ -2,7 +2,7 @@
 
 This repository contains configuration files related to my desktop environment.
 
-Disclaimer: CSS files were vibe-coded
+Disclaimer: This is largely vibe-coded
 
 ## Prerequisites
 ### Hyprland specifics
